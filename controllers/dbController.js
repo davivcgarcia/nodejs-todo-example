@@ -7,7 +7,7 @@ var mongoConnectionDelay = 2000;
 
 function delayedConnect(delay) {
   setTimeout(function() {
-    mongoose.connect(mongoUri, {server:{auto_reconnect:true}});
+    mongoose.connect(mongoUri);
   }, delay);
 }
 
