@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var mongoUri = process.env.MONGODB_URI ||
                'mongodb://mongodb:27017/nodejs-todo-example';
 
-var mongoConnectionDelay = 2000;
+var mongoConnectionDelay = process.env.MONGODB_WAIT || 2000;
 
 function delayedConnect(delay) {
   setTimeout(function() {
