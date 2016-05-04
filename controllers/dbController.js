@@ -11,18 +11,16 @@ function delayedConnect(delay) {
   }, delay);
 }
 
-var db = mongoose.connection;
-
-db.on('connected', function() {
+mongoose.connection.on('connected', function() {
   console.log('Mongoose default connection established with ' + mongoUri + '.');
 });
 
-db.on('disconnected', function() {
+mongoose.connection.on('disconnected', function() {
   console.log('Mongoose default connection terminated. Trying to reconnect...');
   delayedConnect(mongoConnectionDelay);
 });
 
-db.on('error', function(error) {
+mongoose.connection.on('error', function(error) {
   console.log('Mongoose default connection failed: ' + error);
   mongoose.disconnect();
 });
