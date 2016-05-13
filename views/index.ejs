@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="todoApp">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>davivcgarcia/nodejs-app-example - A simple TODO List implemented in MEAN</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 </head>
 <body>
-  <h1>davivcgarcia/nodejs-app-example</h1>
-  <p>A simple TODO List App implemented with MEAN stack.</p>
-  <h2>TODO</h2>
-  <ul>
-    <li>This is a sample task for markup only.</li>
-  </ul>
+  <div class="container">
+    <h1>davivcgarcia/nodejs-app-example</h1>
+    <p>A simple TODO List App implemented with MEAN stack.</p>
+    <hr />
+    <div ng-controller="mainController">
+      <h2>TO-DO List</h2>
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="newTodo" value="" />
+        <span class="input-group-btn">
+          <button class="btn btn-success" type="button" ng-click="createTodo()">Add!</button>
+        </span>
+      </div>
+      <br />
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="todo in todos">
+          <button type="button" class="btn btn-danger btn-sm">
+            <span class="glyphicon glyphicon-remove-circle" ng-click="removeTodo(todo._id)"></span>
+          </button>
+          {{ todo.task }}
+        </l1>
+      </ul>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="/assets/js/clientApp.js"></script>
 </body>
 </html>
