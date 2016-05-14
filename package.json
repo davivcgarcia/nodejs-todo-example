@@ -4,8 +4,8 @@
   "description": "Node.JS + Express.JS TODO Application Example",
   "main": "serverApp.js",
   "engines": {
-    "node": "6.0.x",
-    "npm": "3.8.x"
+    "node": "6.x",
+    "npm": "3.x"
   },
   "scripts": {
     "start": "node serverApp.js",
