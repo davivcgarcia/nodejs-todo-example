@@ -8,6 +8,3 @@ services:
      - mongodb
   mongodb:
     image: mongo:latest
-    volumes:
-      - ~/Docker/volumes/mongodb/db:/data/db
-      - ~/Docker/volumes/mongodb/configdb:/data/configdb
